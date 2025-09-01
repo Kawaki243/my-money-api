@@ -28,13 +28,13 @@ public interface ExpenseRepository extends JpaRepository<ExpenseEntity, Long> {
      *     SELECT *
      *     FROM tbl_expenses
      *     WHERE profile_id = ?
-     *     ORDER BY date ASC;
+     *     ORDER BY date DESC;
      * </pre>
      *
      * @param profileId the ID of the profile
      * @return a list of {@link ExpenseEntity} sorted by date (newest first)
      */
-    List<ExpenseEntity> findByProfileIdOrderByDateAsc(Long profileId);
+    List<ExpenseEntity> findByProfileIdOrderByDateDesc(Long profileId);
 
     /**
      * Retrieves the top 5 most recent expenses for a given profile.

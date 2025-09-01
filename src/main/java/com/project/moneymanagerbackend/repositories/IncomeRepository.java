@@ -20,13 +20,13 @@ public interface IncomeRepository extends JpaRepository<IncomeEntity,Long> {
      *     SELECT *
      *     FROM tbl_incomes
      *     WHERE profile_id = ?
-     *     ORDER BY date ASC;
+     *     ORDER BY date DESC;
      * </pre>
      *
      * @param profileId the ID of the profile
      * @return a list of {@link IncomeEntity} sorted by date (newest first)
      */
-    List<IncomeEntity> findByProfileIdOrderByDateAsc(Long profileId);
+    List<IncomeEntity> findByProfileIdOrderByDateDesc(Long profileId);
 
     /**
      * Retrieves the top 5 most recent expenses for a given profile.
