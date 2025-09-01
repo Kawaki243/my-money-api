@@ -97,8 +97,7 @@ public class ExpenseService {
      */
     public List<ExpenseDTO> getCurrentMonthExpensesForCurrentUser() {
         ProfileEntity profileEntity = this.profileService.getCurrentProfile();   /** Get current profile */
-        List<ExpenseEntity> expenseEntityList =
-                expenseRepository.findByProfileIdOrderByDateDesc(profileEntity.getId());
+        List<ExpenseEntity> expenseEntityList = expenseRepository.findByProfileId(profileEntity.getId());
         return expenseEntityList.stream().map(this::toDTO).toList();             /** Convert to DTO list */
     }
 

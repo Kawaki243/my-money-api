@@ -54,8 +54,7 @@ public class IncomeService {
      */
     public List<IncomeDTO> getCurrentMonthIncomesForCurrentUser() {
         ProfileEntity profile = profileService.getCurrentProfile();                       /** Get current profile */
-        List<IncomeEntity> list =
-                incomeRepository.findByProfileIdOrderByDateDesc(profile.getId());
+        List<IncomeEntity> list = incomeRepository.findByProfileId(profile.getId());
         return list.stream().map(this::toDTO).toList();                                   /** Convert to DTO list */
     }
 
