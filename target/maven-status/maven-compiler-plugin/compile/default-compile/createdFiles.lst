@@ -3,6 +3,7 @@ com\project\moneymanagerbackend\entities\ExpenseEntity$ExpenseEntityBuilder.clas
 com\project\moneymanagerbackend\dto\AuthenticationDTO.class
 com\project\moneymanagerbackend\entities\ExpenseEntity.class
 com\project\moneymanagerbackend\dto\IncomeDTO$IncomeDTOBuilder.class
+com\project\moneymanagerbackend\services\PingService.class
 com\project\moneymanagerbackend\dto\ProfileRequest$ProfileRequestBuilder.class
 com\project\moneymanagerbackend\controllers\ExpenseController.class
 com\project\moneymanagerbackend\entities\IncomeEntity.class
