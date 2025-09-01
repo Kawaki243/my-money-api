@@ -13,20 +13,20 @@ import java.util.List;
 public interface IncomeRepository extends JpaRepository<IncomeEntity,Long> {
 
     /**
-     * Retrieves all expenses for a given profile, ordered by date in descending order.
+     * Retrieves all expenses for a given profile, ordered by date in ascending order.
      *
      * SQL Equivalent:
      * <pre>
      *     SELECT *
      *     FROM tbl_incomes
      *     WHERE profile_id = ?
-     *     ORDER BY date DESC;
+     *     ORDER BY date ASC;
      * </pre>
      *
      * @param profileId the ID of the profile
      * @return a list of {@link IncomeEntity} sorted by date (newest first)
      */
-    List<IncomeEntity> findByProfileIdOrderByDateDesc(Long profileId);
+    List<IncomeEntity> findByProfileIdOrderByDateAsc(Long profileId);
 
     /**
      * Retrieves the top 5 most recent expenses for a given profile.

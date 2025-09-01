@@ -188,7 +188,7 @@ public class ProfileService {
                     "user", getPublicProfile(authenticationDTO.getEmail())
             );
         } catch (Exception e) {
-            throw new RuntimeException("Invalid email or password"+e.getMessage());
+            throw new RuntimeException("Invalid email or password "+e.getMessage());
         }
     }
 }

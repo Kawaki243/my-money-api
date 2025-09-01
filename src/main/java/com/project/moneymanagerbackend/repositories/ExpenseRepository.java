@@ -21,20 +21,20 @@ import java.util.Optional;
 public interface ExpenseRepository extends JpaRepository<ExpenseEntity, Long> {
 
     /**
-     * Retrieves all expenses for a given profile, ordered by date in descending order.
+     * Retrieves all expenses for a given profile, ordered by date in ascending order.
      *
      * SQL Equivalent:
      * <pre>
      *     SELECT *
      *     FROM tbl_expenses
      *     WHERE profile_id = ?
-     *     ORDER BY date DESC;
+     *     ORDER BY date ASC;
      * </pre>
      *
      * @param profileId the ID of the profile
      * @return a list of {@link ExpenseEntity} sorted by date (newest first)
      */
-    List<ExpenseEntity> findByProfileIdOrderByDateDesc(Long profileId);
+    List<ExpenseEntity> findByProfileIdOrderByDateAsc(Long profileId);
 
     /**
      * Retrieves the top 5 most recent expenses for a given profile.

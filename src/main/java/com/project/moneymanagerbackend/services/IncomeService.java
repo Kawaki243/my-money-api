@@ -54,12 +54,8 @@ public class IncomeService {
      */
     public List<IncomeDTO> getCurrentMonthIncomesForCurrentUser() {
         ProfileEntity profile = profileService.getCurrentProfile();                       /** Get current profile */
-        LocalDate now = LocalDate.now();                                                  /** Today's date */
-        LocalDate startDate = now.withDayOfMonth(1);                                      /** Start of current month */
-        LocalDate endDate = now.withDayOfMonth(now.lengthOfMonth());                      /** End of current month */
         List<IncomeEntity> list =
-                incomeRepository.findByProfileIdAndDateBetween(
-                        profile.getId(), startDate, endDate);                             /** Query incomes */
+                incomeRepository.findByProfileIdOrderByDateAsc(profile.getId());
         return list.stream().map(this::toDTO).toList();                                   /** Convert to DTO list */
     }
 
